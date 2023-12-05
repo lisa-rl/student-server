@@ -1,16 +1,21 @@
 package fr.efrei.studentserver.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Student {
+
   @Id
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+  @SequenceGenerator(name = "sequenceGenerator")
   private Integer id;
 
   private String name;
 
   private Integer age;
+
+  public Student() {
+  }
 
   public Integer getId() {
     return id;
