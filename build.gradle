@@ -27,3 +27,11 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+tasks.named("bootJar") {
+	launchScript{
+		enabled = true
+	}
+	enabled = true
+	archiveFileName = "server.${archiveExtension.get()}"
+}
